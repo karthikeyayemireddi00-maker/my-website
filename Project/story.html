@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>story</title>
+<style>
+
+body{
+  background:linear-gradient(#1a0f0f,#3b1f1f);
+  color:#f5e6c8;
+  padding-top:100px; 
+}
+
+.face{
+  max-width:900px;
+  padding:10px;
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  background: rgba(255, 255, 255, 0.04);
+  border-radius:10px;
+  margin:20px auto;
+  display:flex;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.7);
+  font-size:20px;
+  backdrop-filter:blur(12px);
+}
+
+.face:nth-child(even){
+  flex-direction:row-reverse;
+}
+.face img{
+  width:40%;
+  height:350px;
+  object-fit:cover;
+}
+
+.face div{
+  padding:10px;
+}
+
+p{
+  font-family:lora;
+}
+
+h1{
+  font-family:serif;
+  color:#d4af37;
+}
+
+.face:hover {
+  transform: translateY(-10px) scale(1.01);
+  border-color: rgba(212, 175, 55, 0.8);
+  box-shadow: 0 0 40px rgba(212, 175, 55, 0.1);
+}
+
+.main{
+  position:fixed;
+  top:25px;
+  left:50%;
+  transform:translateX(-50%);
+  display:flex;
+  gap:20px;
+  padding:10px 30px;
+  border-radius:20px;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(15px);
+  border: 1px;
+  z-index: 1000;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.5);
+}
+
+.box2 a{
+  background-color:#8b0000;
+  border:none;
+  border-radius:10px;
+  padding:3px;
+  margin:4px 2px;
+  color:#f5e6c8;
+  text-decoration:none;
+  width:80px;
+  height:20px;
+  display:flex;
+  justify-content:center;
+}
+
+a:hover{
+  background-color:#1a0f0f;
+  color:#d4af37;
+  transition:0.5s;
+  margin:6px 4px;
+  box-shadow:4px 4px 10px #d4af37;
+   transform:translateY(-3px);
+}
+#video{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  z-index:-1;
+  opacity:0.35;
+}
+
+</style>
+</head>
+<body>
+<div class="main">
+<div class="box2"><a href="project.html">Home</a></div>
+<div class="box2"><a href="temples.html" target="_blank">Temples</a></div>
+<div class="box2"><a href="characters.html" target="_blank">Characters</a></div>
+</div>
+<video autoplay muted loop id="video">
+<source src="video2.mp4" type="video/mp4"> 
+</video>
+<div class="face" id="krishna">
+<img src="img4.jpg">
+<div>
+<h1>Lord Krishna</h1>
+<p>Krishna was born in Mathura to Devaki and Vasudeva as an incarnation of Vishnu to restore dharma. He was raised in Gokul and later became the ruler of Dwarka after defeating Kansa. Krishna formed strong bonds with the Pandavas and supported them in their struggle for justice. He tried to bring peace between Pandavas and Kauravas but failed to stop the war. During the Kurukshetra war, he became Arjuna’s charioteer and delivered the Bhagavad Gita, guiding him to follow his duty and righteousness.</p>
+</div>
+</div>
+
+<div class="face" id="parashurama">
+<img src="img5.jpg">
+<div>
+<h1>Lord Parashurama</h1>
+<p>Parashurama was the sixth incarnation of Lord Vishnu, born to sage Jamadagni and Renuka. He was a powerful warrior-sage who carried an axe (Parashu) given by Lord Shiva. After his father was killed by arrogant Kshatriya kings, Parashurama destroyed the Kshatriya warriors many times to restore justice and dharma.
+
+He later became a great teacher of warfare and trained legendary warriors like Bhishma, Dronacharya, and Karna. Parashurama cursed Karna when he discovered that Karna had lied about being a Brahmin to learn celestial weapons. Though he did not fight in the Kurukshetra war, his teachings and curse played an important role in the outcome of the war.</p>
+</div>
+</div>
+
+<div class="face" id="bhisma">
+<img src="img6.jpg">
+<div>
+<h1>Bhisma Pitamah</h1>
+<p>Bhishma was born as Devavrata, the son of King Shantanu and the river goddess Ganga in Hastinapura. He was trained in warfare, politics, and scriptures and became one of the greatest warriors of his time. To fulfill his father’s wish, he took a terrible vow of lifelong celibacy and loyalty to the throne, earning the name Bhishma. He supported the Kauravas because of his duty to protect the kingdom of Hastinapura. In the Kurukshetra war, he served as the first commander of the Kaurava army and fought bravely until he was defeated by Arjuna with Shikhandi’s help.</p>
+</div>
+</div>
+
+<div class="face" id="drona">
+<img src="img7.jpg">
+<div>
+<h1>Dronacharya</h1>
+<p>Dronacharya was born to sage Bharadwaja and became a master of warfare and weapons. He trained both the Pandavas and Kauravas and showed special favor to Arjuna. After being insulted by King Drupada, he sought revenge and later fought for the Kauravas. In the Kurukshetra war, he became commander after Bhishma and fought fiercely. He was defeated through a strategy involving the news of his son Ashwatthama’s death.</p>
+</div>
+</div>
+
+<div class="face" id="vyasa">
+<img src="img9.jpg">
+<div>
+<h1>Sage Vyasa</h1>
+<p>Vyasa was born to sage Parashara and Satyavati and became a great sage and scholar. He played a key role in continuing the Kuru lineage by fathering Dhritarashtra, Pandu, and Vidura. Known for his wisdom, he guided many characters during difficult times. He granted divine vision to Sanjaya to witness the war. Vyasa is also credited as the author of the Mahabharata.</p>
+</div>
+</div>
+
+<div class="face" id="yudhisthira">
+<img src="img10.jpg">
+<div>
+<h1>Yudhistira</h1>
+<p>Yudhishthira was the eldest Pandava, born to Kunti through the blessings of Yama, the god of dharma. He was known for his truthfulness, justice, and strong moral values. He lost his kingdom in a dice game to the Kauravas and went into exile with his brothers. He later fought in the Kurukshetra war to regain his rightful kingdom. After the victory, he became the king of Hastinapura and ruled with righteousness.</p>
+</div>
+</div>
+
+<div class="face" id="arjuna">
+<img src="img11.jpg">
+<div>
+<h1>Arjuna</h1>
+<p>Arjuna was the son of Kunti and Indra and one of the five Pandavas. He was trained by Dronacharya and became the greatest archer of his time. He received divine weapons from the gods and formed a close bond with Krishna. At the start of the Kurukshetra war, he was guided by Krishna to follow his duty. He played a key role in defeating many powerful warriors and securing victory for the Pandavas.</p>
+</div>
+</div>
+
+<div class="face" id="bhima">
+<img src="img14.jpg">
+<div>
+<h1>Bhima</h1>
+<p>Bhima was the second Pandava, born to Kunti through the blessings of Vayu, the god of wind. He was known for his immense strength and fearless nature from childhood. He protected his brothers and defeated many enemies during their exile. He vowed to kill Duryodhana and Dushasana for their wrongdoings. In the Kurukshetra war, he fulfilled his vows and played a major role in the Pandavas’ victory.</p>
+</div>
+</div>
+
+<div class="face" id="nakula">
+<img src="img15.jpg">
+<div>
+<h1>Nakula</h1>
+<p>Nakula was one of the Pandavas, born to Madri through the blessings of the Ashwini Kumaras. He was known for his beauty, skill in sword fighting, and expertise in horse care. He stood by his brothers during exile and remained loyal throughout their struggles. In the Kurukshetra war, he fought bravely on the side of the Pandavas. He played an important role in supporting their victory and maintaining unity among the brothers.</p>
+</div>
+</div>
+
+<div class="face" id="sahadeva">
+<img src="img16.jpg">
+<div>
+<h1>Sahadeva</h1>
+<p>Sahadeva was one of the Pandavas, born to Madri through the blessings of the Ashwini Kumaras. He was known for his intelligence, wisdom, and knowledge of astrology. He remained loyal to his brothers and supported them during exile and hardships. In the Kurukshetra war, he fought on the side of the Pandavas and fulfilled his duty as a warrior. He played an important role in strategy and contributed to their final victory.</p>
+</div>
+</div>
+
+<div class="face" id="shakuni">
+<img src="img17.jpg">
+<div>
+<h1>Shakuni</h1>
+<p>Shakuni was the prince of Gandhara and the brother of Gandhari. He was clever, manipulative, and skilled in the game of dice. He influenced Duryodhana and helped him defeat the Pandavas in the dice game. His schemes and hatred played a major role in creating conflict between the two sides. In the Kurukshetra war, he fought for the Kauravas and was eventually killed by Sahadeva.</p>
+</div>
+</div>
+
+<div class="face" id="duryodhana">
+<img src="img12.jpg">
+<div>
+<h1>Duryodhana</h1>
+<p>Duryodhana was the eldest son of Dhritarashtra and the leader of the Kauravas. He was jealous of the Pandavas and refused to give them their rightful kingdom. Influenced by Shakuni, he planned many schemes including the dice game to defeat them. He led the Kaurava army in the Kurukshetra war with great determination. He was ultimately defeated by Bhima in a mace battle.</p>
+</div>
+</div>
+
+<div class="face" id="karna">
+<img src="img13.jpg">
+<div>
+<h1>Karna</h1>
+<p>Karna was born to Kunti and Surya before her marriage and was abandoned at birth. He was raised by a charioteer family and became a great warrior despite many challenges. He was a loyal friend of Duryodhana, who made him king of Anga. He fought against the Pandavas without knowing they were his brothers. In the Kurukshetra war, he was killed by Arjuna after losing his divine protection.</p>
+</div>
+</div>
+
+<div class="face" id="abhimanyu">
+<img src="img18.jpg">
+<div>
+<h1>Abhimanyu</h1>
+<p>Abhimanyu was the son of Arjuna and Subhadra and a brave young warrior. He learned warfare skills while still in his mother’s womb. During the Kurukshetra war, he entered the Chakravyuha formation with great courage. He fought many powerful warriors alone but was surrounded unfairly. He was eventually killed, becoming a symbol of bravery and sacrifice.</p>
+</div>
+</div>
+
+<div class="face" id="ghatotkacha">
+<img src="img19.jpg">
+<div>
+<h1>Ghatotkacha</h1>
+<p>Ghatotkacha was the son of Bhima and the demoness Hidimba. He possessed magical powers and was especially strong during night battles. He supported the Pandavas and fought fiercely in the war. His battle forced Karna to use his divine weapon. He sacrificed his life, helping protect Arjuna and ensuring the Pandavas’ advantage.</p>
+</div>
+</div>
+
+<div class="face" id="ashwatthama">
+<img src="img20.jpg">
+<div>
+<h1>Ashwatthama</h1>
+<p>Ashwatthama was the son of Dronacharya and a powerful warrior. He fought on the side of the Kauravas and was known for his anger and strength. After his father’s death, he became determined to take revenge. He attacked the Pandava camp at night after the war ended. He was later cursed for his actions and made to wander endlessly.</p>
+</div>
+</div>
+
+<div class="face" id="draupadi">
+<img src="img21.jpg">
+<div>
+<h1>Draupadi</h1>
+<p>Draupadi was born from a sacred fire and became the wife of the five Pandavas. She was known for her strength, dignity, and devotion to dharma. She was humiliated in the Kaurava court after the dice game. This incident became one of the main causes of the Kurukshetra war. She remained strong throughout the conflict and supported the Pandavas.</p>
+</div>
+</div>
+
+<div class="face" id="kunti">
+<img src="img22.jpg">
+<div>
+<h1>Kunti</h1>
+<p>Kunti was the mother of the Pandavas and the wife of King Pandu. She received a divine boon that allowed her to have children from gods. Before marriage, she gave birth to Karna but abandoned him to protect her honor. She raised the Pandavas through many hardships and guided them with wisdom. Her decisions and sacrifices greatly influenced the course of the Kurukshetra war.</p>
+</div>
+</div>
+
+<div class="face" id="gandhari">
+<img src="img23.jpg">
+<div>
+<h1>Gandhari</h1>
+<p>Gandhari was the wife of Dhritarashtra and the mother of the Kauravas. She chose to blindfold herself to share her husband’s blindness. She loved her sons deeply but was aware of their wrong actions. She tried to guide them but could not prevent the war. After losing her sons, she cursed Krishna in grief.</p>
+</div>
+</div>
+
+</body>
+</html>

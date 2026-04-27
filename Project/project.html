@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>project</title>
+    <style>
+       
+        body {
+            background: #0d0909; 
+            color: #f5e6c8;
+            margin: 0;
+            padding: 0;
+            font-family: 'Lora', serif;
+            overflow-x: hidden;
+        }
+        .video-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            background: #1a0f0f;
+        }
+
+        #video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.4;
+        }
+        .div {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(0,0,0,0) 30%, rgba(13, 9, 9, 0.9) 100%);
+            z-index: -1; 
+            
+        }
+        .hero {
+            text-align: center;
+            padding: 80px 20px 40px;
+        }
+
+        .hero h1 {
+            font-family: 'Cinzel', serif;
+            color: #d4af37;
+            margin: 0;
+            letter-spacing: 5px;
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+            text-transform: uppercase;
+        }
+
+        .hero p {
+            font-family: 'Cinzel', serif;
+            letter-spacing: 3px;
+            color: #f5e6c8;
+            opacity: 0.8;
+            margin-top: 15px;
+        }
+        .divider {
+            width: 300px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #d4af37, transparent);
+            margin: 20px auto;
+        }
+        .main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            padding: 40px 20px;
+            flex-wrap: wrap;
+        }
+        .box {
+            width: 320px;
+            height: 480px;
+            background: rgba(255, 255, 255, 0.03); 
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            padding: 25px;
+            transition: all 0.6s;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+            text-decoration: none;
+        }
+
+        .box img {
+            width: 100%;
+            height: 65%;
+            object-fit: cover;
+            border-radius: 12px;
+            transition: 0.5s;
+            filter: brightness(0.8);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+
+        .box h2 {
+            font-family: 'Cinzel', serif;
+            color: #f5e6c8;
+            font-size: 1.6rem;
+            margin: 15px 0;
+            transition: 0.4s;
+        }
+        .btn {
+            background-color: #8b0000;
+            color: #f5e6c8;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 50px;
+            padding: 10px 35px;
+            font-family: 'Cinzel', serif;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            transition: 0.4s;
+            text-transform: uppercase;
+        }
+        .box:hover {
+            transform: translateY(-15px) scale(1.02);
+            border-color: #d4af37;
+            background: rgba(212, 175, 55, 0.08);
+            box-shadow: 0 0 40px rgba(212, 175, 55, 0.15);
+        }
+
+        .box:hover img {
+            filter: brightness(1.1);
+            transform: scale(1.04);
+        }
+
+        .box:hover h2 {
+            color: #d4af37;
+            text-shadow: 0 0 10px #d4af37;
+        }
+
+        .box:hover .btn {
+            background: #d4af37;
+            color: #1a0f0f;
+            box-shadow: 0 0 20px #d4af37;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="video-wrapper">
+        <video autoplay muted loop id="video">
+            <source src="video2.mp4" type="video/mp4"> 
+        </video>
+        <div class="div"></div>
+    </div>
+
+    <header class="hero">
+        <div class="divider"></div>
+        <h1>Epic India</h1>
+        <p>The Mahabharata and Its Sacred Legacy</p>
+        <div class="divider"></div>
+    </header>
+
+    <div class="main">
+        <a href="characters.html" class="box" target="_blank">
+            <img src="img1.png" alt="Characters">
+            <h2>Warriors</h2>
+            <div class="btn">Explore</div>
+        </a>
+
+        <a href="story.html" class="box" target="_blank">
+            <img src="img2.jpg" alt="Story">
+            <h2>The Saga</h2>
+            <div class="btn">Learn</div> 
+        </a>
+
+        <a href="temples.html" class="box" target="_blank">
+            <img src="img3.jpg" alt="Temples">
+            <h2>Temples</h2>
+            <div class="btn">Visit</div>
+        </a>
+    </div>
+
+</body>
+</html>

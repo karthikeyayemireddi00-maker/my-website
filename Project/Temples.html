@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Temples</title>
+<style>
+body{background:linear-gradient(#1a0f0f,#3b1f1f);
+    color: #f5e6c8;
+    }
+.face {
+            width: 320px;
+            min-height: 500px;
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 160px 160px 20px 20px; 
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            transition: all 0.5s;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+        }
+.face img {
+            width: 100%;
+            height: 240px; 
+            object-fit: cover;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            transition: 0.6s;
+        }
+.face div{padding:25px;text-align: center;}
+p{font-family:lora;font-size:16px;}
+h1{font-family:serif;color:#d4af37;font-size:25px;}
+.face:hover {
+            transform: translateY(-15px);
+            border-color: #d4af37;
+            box-shadow: 0 0 50px rgba(212, 175, 55, 0.2);
+            background: rgba(212, 175, 55, 0.05);
+        }
+           .box2 a {
+            font-family: 'Cinzel', serif;
+            color: #f5e6c8;
+            text-decoration: none;
+            font-size: 13px;
+            padding: 5px 15px;
+            transition: 0.4s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 1px solid transparent;
+        }
+a:hover{background-color:#1a0f0f;
+        color:#d4af37;
+        transition:0.5s;
+        margin:6px 4px;
+        box-shadow:4px 4px 10px #d4af37;
+        transform:translateY(-3px);
+       }
+       .box2{display:inline-block;}
+.main {
+            position: fixed;
+            top: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 15px;
+            padding: 10px 30px;
+            background: rgba(20, 10, 10, 0.85);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 50px;
+            z-index: 1000;
+        }
+  .grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            padding: 120px 20px 60px; 
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+  video{width:90%;
+      height:650px;
+      object-fit:cover;
+      margin:auto;
+      display:block;
+       }
+       #video{background: radial-gradient(circle, rgba(26, 15, 15, 0.4) 0%, rgba(10, 5, 5, 0.85) 100%);
+        position:fixed;
+        object-fit:cover;
+             top:0;
+             left:0;
+             z-index:-1;
+             opacity:0.7;
+             width:100%;
+             height:100%;
+             }
+</style>
+</head>
+<body>
+     <video autoplay muted loop id="video">
+<source src="video2.mp4" type="video/mp4"> 
+</video>
+    <div class="main">
+<div class="box2">
+<a href="project.html">Home</a>
+</div>
+<div class="box2">
+<a href="story.html" target="_blank">Story</a>
+</div>
+<div class="box2">
+<a href="characters.html" target="_blank">Characters</a>
+</div>
+</div>
+    <div class="grid">
+<div class="face">
+<img src="temp1.png">
+<div>
+<h1>Kedarnath Temple</h1>
+<p>Kedarnath is one of the twelve Jyotirlinga shrines dedicated to Lord Shiva. It is located in the Garhwal region of Uttarakhand, India, at an altitude of about 3,583 meters (11,755 feet). The temple is known for its breathtaking location amidst snow-capped mountains and is a popular destination for pilgrims seeking spiritual enlightenment.</p>
+</div>
+</div>
+<div class="face">
+<img src="temp2.png">
+<div>
+<h1>Badrinath Temple</h1>
+<p>Badrinath is one of the four Char Dham pilgrimage sites in India and is dedicated to Lord Vishnu. It is located in the Chamoli district of Uttarakhand, India, at an altitude of about 3,133 meters (10,279 feet). The temple is known for its serene location in the Himalayas and is a popular destination for pilgrims seeking spiritual enlightenment.</p>
+</div>
+</div>
+<div class="face">
+<img src="temp3.png">
+<div>
+<h1>Somnath Temple</h1>
+<p>Somnath is one of the twelve Jyotirlinga shrines dedicated to Lord Shiva. It is located in the Gujarat state of India, on the coast of the Arabian Sea. The temple is known for its rich history and spiritual significance, and is a popular destination for pilgrims seeking spiritual enlightenment.</p>
+</div>
+</div>
+<div class="face">
+    <img src="temp4.png">
+    <div>
+        <h1>Kashi Vishwanath Temple</h1>
+        <p>Kashi Vishwanath Temple is a Hindu temple dedicated to Lord Shiva, located in Varanasi, Uttar Pradesh, India. It is one of the twelve Jyotirlinga shrines and is considered one of the most sacred places for Hindus. The temple is known for its intricate architecture and spiritual significance.</p>
+    </div>
+</div>
+<div class="face">
+    <img src="temp5.png">
+    <div>
+        <h1>Tirupati Temple</h1>
+        <p>Tirumala Venkateswara Temple is a Hindu temple dedicated to Lord Venkateswara, a form of Lord Vishnu. It is located in the state of Andhra Pradesh, India, and is one of the most visited and wealthiest temples in the world. The temple is known for its spiritual significance and the annual Balaji Yatra.</p>
+    </div>
+</div>
+<div class="face">
+    <img src="temp7.png">
+    <div>
+        <h1>Vaishno Devi Temple</h1>
+        <p>Vaishno Devi Temple is a Hindu temple dedicated to the goddess Vaishno Devi, a form of the Divine Mother. It is located in the state of Jammu and Kashmir, India, and is one of the most visited pilgrimage sites for devotees. The temple is known for its spiritual significance and the annual Yatra.</p>
+    </div>
+</div>
+<div class="face">
+    <img src="temp6.png">
+    <div>
+        <h1>Puri Jagannath Temple</h1>
+        <p>Puri Jagannath Temple is a Hindu temple dedicated to Lord Jagannath, a form of Lord Vishnu. It is located in the state of Odisha, India, and is one of the four Char Dham pilgrimage sites. The temple is known for its beautiful architecture and the annual Rath Yatra festival.</p>
+    </div>
+</div>
+<div class="face">
+    <img src="temp8.png">
+    <div>
+        <h1>Mahakaleshwar Temple</h1>
+        <p>Mahakaleshwar Temple is a Hindu temple dedicated to Lord Shiva, located in Ujjain, Madhya Pradesh, India. It is one of the twelve Jyotirlinga shrines and is considered one of the most sacred places for Hindus. The temple is known for its intricate architecture and spiritual significance.</p>
+    </div>
+</div>
+<div class="face">
+    <img src="temp9.png">
+    <div>
+        <h1>KanakaDurga Temple</h1>
+        <p>KanakaDurga Temple is a Hindu temple dedicated to the goddess KanakaDurga, located in the state of Andhra Pradesh, India. It is known for its beautiful architecture and spiritual significance.</p>
+    </div>
+</div>
+<div class="face">
+    <img src="temp4.png">
+    <div>
+        <h1>Omkareshwar Temple</h1>
+        <p>Kashi Vishwanath Temple is a Hindu temple dedicated to Lord Shiva, located in Varanasi, Uttar Pradesh, India. It is one of the twelve Jyotirlinga shrines and is considered one of the most sacred places for Hindus. The temple is known for its intricate architecture and spiritual significance.</p>
+    </div>
+</div>
+<div class="face">
+    <img src="temp10.png">
+    <div>
+        <h1>Meenakshi Temple</h1>
+        <p>Meenakshi Temple is dedicated to Goddess Meenakshi and Lord Shiva. It is known for its stunning architecture and colorful towers. Located in Madurai, it is a major cultural landmark. The temple complex is vast and detailed. It is visited by devotees and tourists alike.</p>
+    </div>
+</div>
+<div class="face">
+    <img src="temp11.png">
+    <div>
+        <h1>Kaamakhya Temple</h1>
+        <p>Kamakhya Temple is a famous Shakti Peetha. It is dedicated to Goddess Kamakhya. The temple is known for its unique rituals and festivals. It is located on Nilachal Hill. It holds great importance in tantric traditions.</p>
+    </div>
+</div>
+</div>
+</body>
+</html>
