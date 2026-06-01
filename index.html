@@ -16,6 +16,8 @@
             position: fixed;
             top: 0;
             left: 0;
+            right: 0;
+            bottom: 0;
             width: 100%;
             height: 100%;
             z-index: -2;
@@ -32,6 +34,8 @@
             position: fixed;
             top: 0;
             left: 0;
+             right: 0;
+            bottom: 0;
             width: 100%;
             height: 100%;
             background: radial-gradient(circle, rgba(0,0,0,0) 30%, rgba(13, 9, 9, 0.9) 100%);
@@ -174,7 +178,6 @@
     <div class="video-wrapper">
         <video autoplay muted loop id="video">
             <source src="video.mp4" type="video/mp4"> 
-            <audio id="bg-music" src="audio.mp3" loop></audio>
         </video>
         <div class="div"></div>
     </div>
@@ -207,7 +210,7 @@
     </div>
 
     <button class="music-btn" onclick="toggleSound()">🎵 Toggle Audio</button>
-
+ <audio id="bg-music" src="audio.mp3" loop></audio>
   
    <script>
     function toggleSound() {
