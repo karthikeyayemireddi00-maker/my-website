@@ -174,6 +174,7 @@
     <div class="video-wrapper">
         <video autoplay muted loop id="video">
             <source src="video.mp4" type="video/mp4"> 
+            <audio id="bg-music" src="audio.mp3" loop></audio>
         </video>
         <div class="div"></div>
     </div>
@@ -208,16 +209,16 @@
     <button class="music-btn" onclick="toggleSound()">🎵 Toggle Audio</button>
 
   
-    <script>
-        function toggleSound() {
-            var myVideo = document.getElementById("video");
+   <script>
+    function toggleSound() {
+        var myAudio = document.getElementById("bg-music");
 
-            if (myVideo.muted === true) {
-                myVideo.muted = false;
-            } else {
-                myVideo.muted = true;
-            }
+        if (myAudio.paused) {
+            myAudio.play();
+        } else {
+            myAudio.pause();
         }
-    </script>
+    }
+</script>
 </body>
 </html>
