@@ -44,26 +44,27 @@ body{
     gap:20px;
     padding:14px 35px;
     border-radius:30px;
-    background:rgba(255,255,255,0.05);
+    background:rgba(255,255,255,0.06);
     backdrop-filter:blur(18px);
-    border:1px solid rgba(255,215,0,0.15);
+    border:1px solid rgba(212,175,55,0.2);
     z-index:1000;
+    box-shadow:0 10px 30px rgba(0,0,0,0.4);
 }
 
 .box2 a{
     text-decoration:none;
     color:#f5e6c8;
     background:#7b0000;
-    padding:12px 24px;
+    padding:12px 22px;
     border-radius:16px;
-    transition:0.5s;
+    transition:0.4s;
 }
 
 .box2 a:hover{
     background:#1a0f0f;
     color:#d4af37;
     transform:translateY(-4px);
-    box-shadow:0 0 18px rgba(212,175,55,0.5);
+    box-shadow:0 0 15px rgba(212,175,55,0.5);
 }
 
 /* GRID */
@@ -86,10 +87,10 @@ body{
     border-radius:35px;
     overflow:hidden;
     cursor:pointer;
-    transition:0.6s ease;
+    transition:0.5s ease;
     background:rgba(255,255,255,0.05);
-    backdrop-filter:blur(18px);
-    border:1px solid rgba(255,215,0,0.15);
+    backdrop-filter:blur(20px);
+    border:1px solid rgba(212,175,55,0.15);
     box-shadow:0 20px 40px rgba(0,0,0,0.5);
 }
 
@@ -98,15 +99,16 @@ body{
 .face::before{
     content:"";
     position:absolute;
-    top:-100%;
-    left:-50%;
+    top:-120%;
+    left:-60%;
     width:60%;
-    height:220%;
+    height:250%;
     background:
     linear-gradient(
     transparent,
-    rgba(255,215,0,0.2),
+    rgba(255,215,0,0.18),
     transparent);
+
     transform:rotate(25deg);
     transition:1s;
     z-index:2;
@@ -122,7 +124,7 @@ body{
     width:100%;
     height:100%;
     object-fit:cover;
-    transition:0.6s;
+    transition:0.5s;
 }
 
 /* TITLE */
@@ -140,11 +142,11 @@ body{
     font-size:24px;
     background:rgba(0,0,0,0.4);
     backdrop-filter:blur(10px);
-    z-index:5;
-    transition:0.4s;
+    z-index:4;
+    transition:0.3s;
 }
 
-/* STORY */
+/* STORY GLASS */
 
 .story{
     position:absolute;
@@ -154,19 +156,19 @@ body{
     justify-content:center;
     align-items:center;
     text-align:center;
-    padding:28px;
-    background:rgba(15,10,10,0.7);
+    padding:30px;
+    background:rgba(10,8,8,0.78);
     backdrop-filter:blur(25px);
     opacity:0;
-    transform:translateY(25px);
+    transform:translateY(20px);
     transition:0.5s ease;
-    z-index:6;
+    z-index:5;
 }
 
 .story h2{
     color:#d4af37;
+    font-size:28px;
     margin-bottom:15px;
-    font-size:30px;
 }
 
 .story p{
@@ -174,26 +176,14 @@ body{
     font-size:15px;
 }
 
-/* DIM ALL */
+/* ONLY HOVERED CARD EFFECT */
 
-.container:hover .face{
-    transform:scale(0.92);
-    opacity:0.4;
-    filter:blur(2px);
-}
-
-/* ACTIVE */
-
-.container .face:hover{
-    transform:scale(1.12);
-    opacity:1;
-    filter:none;
-    z-index:20;
-    margin-left:20px;
-    margin-right:20px;
+.face:hover{
+    transform:translateY(-12px) scale(1.08);
+    z-index:50;
     border-color:#d4af37;
     box-shadow:
-    0 0 45px rgba(212,175,55,0.3),
+    0 0 40px rgba(212,175,55,0.25),
     0 20px 60px rgba(0,0,0,0.8);
 }
 
@@ -247,246 +237,74 @@ grid-template-columns:1fr;
 
 <div class="container">
 
-<!-- KRISHNA -->
 <div class="face">
 <img src="img4.jpg">
 <h1>Krishna</h1>
 <div class="story">
 <h2>Lord Krishna</h2>
-<p>
-Krishna guided the Pandavas and became Arjuna's charioteer during the Kurukshetra war. He delivered the Bhagavad Gita and taught duty, wisdom and righteousness.
-</p>
+<p>Krishna guided the Pandavas and became Arjuna's charioteer during the Kurukshetra war. He delivered the Bhagavad Gita and taught duty, wisdom, and righteousness.</p>
 </div>
 </div>
 
-<!-- PARASHURAMA -->
 <div class="face">
 <img src="img5.jpg">
 <h1>Parashurama</h1>
 <div class="story">
 <h2>Lord Parashurama</h2>
-<p>
-Parashurama was the sixth avatar of Vishnu and master of warfare. He trained Bhishma, Dronacharya and Karna.
-</p>
+<p>Parashurama was the sixth avatar of Vishnu and master of warfare. He trained Bhishma, Dronacharya and Karna.</p>
 </div>
 </div>
 
-<!-- BHISHMA -->
 <div class="face">
 <img src="img6.jpg">
 <h1>Bhishma</h1>
 <div class="story">
 <h2>Bhishma Pitamah</h2>
-<p>
-Bhishma sacrificed his happiness, vowed celibacy and loyally served Hastinapura during the Kurukshetra war.
-</p>
+<p>Bhishma sacrificed his happiness and vowed celibacy to serve Hastinapura loyally during war.</p>
 </div>
 </div>
 
-<!-- DRONA -->
 <div class="face">
 <img src="img7.jpg">
 <h1>Dronacharya</h1>
 <div class="story">
 <h2>Dronacharya</h2>
-<p>
-Dronacharya was teacher of both Pandavas and Kauravas and one of the greatest masters of warfare.
-</p>
+<p>Dronacharya trained the Pandavas and Kauravas and was one of the greatest masters of warfare.</p>
 </div>
 </div>
 
-<!-- VYASA -->
 <div class="face">
 <img src="img9.jpg">
 <h1>Vyasa</h1>
 <div class="story">
 <h2>Sage Vyasa</h2>
-<p>
-Vyasa authored the Mahabharata and guided many during difficult times with wisdom and foresight.
-</p>
+<p>Vyasa authored the Mahabharata and guided generations through wisdom and foresight.</p>
 </div>
 </div>
 
-<!-- YUDHISHTHIRA -->
 <div class="face">
 <img src="img10.jpg">
 <h1>Yudhishthira</h1>
 <div class="story">
 <h2>Yudhishthira</h2>
-<p>
-Known for truth and righteousness, Yudhishthira became king after the Pandavas' victory.
-</p>
+<p>Known for truth and righteousness, Yudhishthira became king after the Pandavas’ victory.</p>
 </div>
 </div>
 
-<!-- ARJUNA -->
 <div class="face">
 <img src="img11.jpg">
 <h1>Arjuna</h1>
 <div class="story">
 <h2>Arjuna</h2>
-<p>
-Arjuna was the greatest archer of his era and Krishna's companion during the Kurukshetra war.
-</p>
+<p>Arjuna was the greatest archer of his era and Krishna’s trusted companion in battle.</p>
 </div>
 </div>
 
-<!-- DURYODHANA -->
 <div class="face">
 <img src="img12.jpg">
 <h1>Duryodhana</h1>
 <div class="story">
 <h2>Duryodhana</h2>
-<p>
-Duryodhana led the Kauravas and refused to give the Pandavas their rightful kingdom.
-</p>
+<p>Duryodhana led the Kauravas and refused to give the Pandavas their rightful kingdom.</p>
 </div>
 </div>
-
-<!-- KARNA -->
-<div class="face">
-<img src="img13.jpg">
-<h1>Karna</h1>
-<div class="story">
-<h2>Karna</h2>
-<p>
-Karna was a loyal friend of Duryodhana and one of the strongest warriors in Mahabharata.
-</p>
-</div>
-</div>
-
-<!-- BHIMA -->
-<div class="face">
-<img src="img14.jpg">
-<h1>Bhima</h1>
-<div class="story">
-<h2>Bhima</h2>
-<p>
-Bhima was famous for immense strength and fulfilled his vows during the Kurukshetra war.
-</p>
-</div>
-</div>
-<!-- NAKULA -->
-<div class="face">
-<img src="img15.jpg">
-<h1>Nakula</h1>
-<div class="story">
-<h2>Nakula</h2>
-<p>
-Nakula was known for beauty, sword fighting skills and expertise in horse care. He remained loyal to his brothers throughout exile and war.
-</p>
-</div>
-</div>
-
-<!-- SAHADEVA -->
-<div class="face">
-<img src="img16.jpg">
-<h1>Sahadeva</h1>
-<div class="story">
-<h2>Sahadeva</h2>
-<p>
-Sahadeva was wise, intelligent and skilled in astrology. He helped the Pandavas with strategy and fought bravely in war.
-</p>
-</div>
-</div>
-
-<!-- SHAKUNI -->
-<div class="face">
-<img src="img17.jpg">
-<h1>Shakuni</h1>
-<div class="story">
-<h2>Shakuni</h2>
-<p>
-Shakuni was the mastermind behind many conflicts. His manipulation and dice game led to the exile of the Pandavas.
-</p>
-</div>
-</div>
-
-<!-- ABHIMANYU -->
-<div class="face">
-<img src="img18.jpg">
-<h1>Abhimanyu</h1>
-<div class="story">
-<h2>Abhimanyu</h2>
-<p>
-Abhimanyu was a fearless young warrior who entered the Chakravyuha and fought bravely before being unfairly surrounded.
-</p>
-</div>
-</div>
-
-<!-- GHATOTKACHA -->
-<div class="face">
-<img src="img19.jpg">
-<h1>Ghatotkacha</h1>
-<div class="story">
-<h2>Ghatotkacha</h2>
-<p>
-The son of Bhima and Hidimba, Ghatotkacha used magical powers in battle and sacrificed himself to protect Arjuna.
-</p>
-</div>
-</div>
-
-<!-- ASHWATTHAMA -->
-<div class="face">
-<img src="img20.jpg">
-<h1>Ashwatthama</h1>
-<div class="story">
-<h2>Ashwatthama</h2>
-<p>
-Ashwatthama, son of Dronacharya, became consumed by revenge after the war and was cursed to wander endlessly.
-</p>
-</div>
-</div>
-
-<!-- DRAUPADI -->
-<div class="face">
-<img src="img21.jpg">
-<h1>Draupadi</h1>
-<div class="story">
-<h2>Draupadi</h2>
-<p>
-Born from sacred fire, Draupadi became wife of the Pandavas and symbolized dignity, strength and justice.
-</p>
-</div>
-</div>
-
-<!-- KUNTI -->
-<div class="face">
-<img src="img22.jpg">
-<h1>Kunti</h1>
-<div class="story">
-<h2>Kunti</h2>
-<p>
-Kunti raised the Pandavas through hardship and made sacrifices that deeply shaped the Mahabharata.
-</p>
-</div>
-</div>
-
-<!-- GANDHARI -->
-<div class="face">
-<img src="img23.jpg">
-<h1>Gandhari</h1>
-<div class="story">
-<h2>Gandhari</h2>
-<p>
-Gandhari blindfolded herself to share her husband's blindness and mourned deeply after losing her sons.
-</p>
-</div>
-</div>
-
-<!-- EXTRA CHARACTER : KRIPACHARYA -->
-<div class="face">
-<img src="img24.jpg">
-<h1>Kripacharya</h1>
-<div class="story">
-<h2>Kripacharya</h2>
-<p>
-Kripacharya was a wise teacher and warrior who survived the Kurukshetra war and continued guiding future generations.
-</p>
-</div>
-</div>
-
-</div>
-
-</body>
-</html>
