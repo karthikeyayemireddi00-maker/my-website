@@ -1,282 +1,492 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>characters</title>
+<title>Mahabharata Characters</title>
+
 <style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
 body{
-  background:linear-gradient(#1a0f0f,#3b1f1f);
-  color: #f5e6c8;
-  padding-top:120px;
-}
-
-.main1{
-  display:flex;
-  flex-wrap:wrap; 
-  justify-content: center;
-}
-
-.box1{
-  width:260px;
-  height:420px;
-  padding:20px;background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(212, 175, 55, 0.2);
-    border-radius: 15px;
-  margin:20px;
-  text-align:center;
-  display:flex;
-  flex-direction:column;
-  justify-content:flex-start;
-  align-items: center;
-  position: relative;
-  overflow: hidden;
-  transition: all 0.5s;
-}
-
-.box1 img {
-    width: 230px;
-    height: 280px;
-    object-fit: cover;
-    border-radius: 10px;
-    transition: 0.5s;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
-}
-
-  .quote{
-  position: absolute;
-    bottom:-100%; 
-    left: 0;
-    width: 100%;
-    background: linear-gradient(to top, rgba(20, 10, 10, 0.95), rgba(60, 20, 20, 0.9));
+    min-height:100vh;
+    background:linear-gradient(#1a0f0f,#3b1f1f);
+    font-family:Georgia, serif;
+    overflow-y:auto;
+    overflow-x:hidden;
     color:#f5e6c8;
-    padding: 10px 0;
-    font-style: italic;
-    text-align: center;
-    transition: 0.4s ease-out;
-    border-top: 1px solid #d4af37;
-    opacity:0;
-    z-index:3;
 }
 
-.box1:hover .quote{
-  opacity:1;
-    bottom:0; 
+/* VIDEO */
+
+#video{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    z-index:-1;
+    opacity:0.35;
 }
 
-.box1:hover {
-    transform: translateY(-15px) scale(1.03);
-    border-color: #d4af37;
-    box-shadow: 0 0 30px rgba(212, 175, 55, 0.2);
-    background: rgba(212, 175, 55, 0.05);
-}
+/* NAVBAR */
 
-.box1 a{
-  display:block;
-}
-
-h1{
-  font-size:18px;
-  color:#D4AF37;
-  margin:15px 0 0;
-  z-index:2;
-}
-
-.box2{
-  display:inline-block;
+.main{
+    position:fixed;
+    top:25px;
+    left:50%;
+    transform:translateX(-50%);
+    display:flex;
+    gap:20px;
+    padding:14px 35px;
+    border-radius:30px;
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(18px);
+    border:1px solid rgba(255,215,0,0.15);
+    z-index:1000;
 }
 
 .box2 a{
-  background-color:#8b0000;
-  border:none;
-  border-radius:10px;
-  padding:3px;
-  margin:4px 2px;
-  color:#f5e6c8;
-  text-decoration:none;
-  width:80px;
-  height:20px;
-  display:flex;
-  justify-content:center;
+    text-decoration:none;
+    color:#f5e6c8;
+    background:#7b0000;
+    padding:12px 24px;
+    border-radius:16px;
+    transition:0.5s;
 }
 
-a:hover{
-  background-color:#1a0f0f;
-  color:#d4af37;
-  transition:0.5s;
-  margin:6px 4px;
-  box-shadow:4px 4px 10px #d4af37;
-   transform:translateY(-3px);
+.box2 a:hover{
+    background:#1a0f0f;
+    color:#d4af37;
+    transform:translateY(-4px);
+    box-shadow:0 0 18px rgba(212,175,55,0.5);
 }
 
-.main {
-    position: fixed;
-    top: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 15px;
-    padding: 10px 30px;
-    background: rgba(20, 10, 10, 0.8);
-    backdrop-filter: blur(15px);
-    border: 1px solid rgba(212, 175, 55, 0.3);
-    border-radius: 50px;
-    z-index: 1000;
+/* GRID */
+
+.container{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:35px;
+    padding:150px 60px 80px;
+    max-width:1500px;
+    margin:auto;
 }
 
-video{
-  width:90%;
-  height:650px;
-  object-fit:cover;
-  margin:auto;
-  display:block;
+/* CARD */
+
+.face{
+    position:relative;
+    width:100%;
+    height:430px;
+    border-radius:35px;
+    overflow:hidden;
+    cursor:pointer;
+    transition:0.6s ease;
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(18px);
+    border:1px solid rgba(255,215,0,0.15);
+    box-shadow:0 20px 40px rgba(0,0,0,0.5);
 }
 
-#video {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -2;
-    opacity: 0.4;
+/* GOLD SHINE */
+
+.face::before{
+    content:"";
+    position:absolute;
+    top:-100%;
+    left:-50%;
+    width:60%;
+    height:220%;
+    background:
+    linear-gradient(
+    transparent,
+    rgba(255,215,0,0.2),
+    transparent);
+    transform:rotate(25deg);
+    transition:1s;
+    z-index:2;
 }
+
+.face:hover::before{
+    left:140%;
+}
+
+/* IMAGE */
+
+.face img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:0.6s;
+}
+
+/* TITLE */
+
+.face h1{
+    position:absolute;
+    bottom:20px;
+    left:50%;
+    transform:translateX(-50%);
+    width:85%;
+    text-align:center;
+    padding:14px;
+    border-radius:22px;
+    color:#d4af37;
+    font-size:24px;
+    background:rgba(0,0,0,0.4);
+    backdrop-filter:blur(10px);
+    z-index:5;
+    transition:0.4s;
+}
+
+/* STORY */
+
+.story{
+    position:absolute;
+    inset:0;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:28px;
+    background:rgba(15,10,10,0.7);
+    backdrop-filter:blur(25px);
+    opacity:0;
+    transform:translateY(25px);
+    transition:0.5s ease;
+    z-index:6;
+}
+
+.story h2{
+    color:#d4af37;
+    margin-bottom:15px;
+    font-size:30px;
+}
+
+.story p{
+    line-height:1.8;
+    font-size:15px;
+}
+
+/* DIM ALL */
+
+.container:hover .face{
+    transform:scale(0.92);
+    opacity:0.4;
+    filter:blur(2px);
+}
+
+/* ACTIVE */
+
+.container .face:hover{
+    transform:scale(1.12);
+    opacity:1;
+    filter:none;
+    z-index:20;
+    margin-left:20px;
+    margin-right:20px;
+    border-color:#d4af37;
+    box-shadow:
+    0 0 45px rgba(212,175,55,0.3),
+    0 20px 60px rgba(0,0,0,0.8);
+}
+
+.face:hover .story{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.face:hover h1{
+    opacity:0;
+}
+
+.face:hover img{
+    filter:brightness(20%) blur(2px);
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1200px){
+.container{
+grid-template-columns:repeat(3,1fr);
+}
+}
+
+@media(max-width:900px){
+.container{
+grid-template-columns:repeat(2,1fr);
+}
+}
+
+@media(max-width:600px){
+.container{
+grid-template-columns:1fr;
+}
+}
+
 </style>
 </head>
 
 <body>
 
 <div class="main">
-  <div class="box2"><a href="index.html">Home</a></div>
-  <div class="box2"><a href="story.html" target="_blank">Story</a></div>
-  <div class="box2"><a href="Temples.html" target="_blank">Temples</a></div>
+<div class="box2"><a href="index.html">Home</a></div>
+<div class="box2"><a href="Temples.html">Temples</a></div>
+<div class="box2"><a href="story.html">Characters</a></div>
 </div>
 
 <video autoplay muted loop id="video">
-  <source src="video.mp4" type="video/mp4"> 
+<source src="video.mp4" type="video/mp4">
 </video>
 
-<div class="main1">
+<div class="container">
 
-<div class="box1">
-<a href="story.html#krishna"><img src="img4.jpg"></a>
-<h1>Lord Krishna</h1>
-<div class="quote">Focus on action, not the result.</div>
+<!-- KRISHNA -->
+<div class="face">
+<img src="img4.jpg">
+<h1>Krishna</h1>
+<div class="story">
+<h2>Lord Krishna</h2>
+<p>
+Krishna guided the Pandavas and became Arjuna's charioteer during the Kurukshetra war. He delivered the Bhagavad Gita and taught duty, wisdom and righteousness.
+</p>
+</div>
 </div>
 
-<div class="box1">
-<a href="story.html#parashurama"><img src="img5.jpg"></a>
-<h1>Lord Parashurama</h1>
-<div class="quote">When dharma is threatened, strength must rise.</div>
+<!-- PARASHURAMA -->
+<div class="face">
+<img src="img5.jpg">
+<h1>Parashurama</h1>
+<div class="story">
+<h2>Lord Parashurama</h2>
+<p>
+Parashurama was the sixth avatar of Vishnu and master of warfare. He trained Bhishma, Dronacharya and Karna.
+</p>
+</div>
 </div>
 
-<div class="box1">
-<a href="story.html#bhisma"><img src="img6.jpg"></a>
-<h1>Bhishma Pitamah</h1>
-<div class="quote">Duty above all, even above oneself.</div>
+<!-- BHISHMA -->
+<div class="face">
+<img src="img6.jpg">
+<h1>Bhishma</h1>
+<div class="story">
+<h2>Bhishma Pitamah</h2>
+<p>
+Bhishma sacrificed his happiness, vowed celibacy and loyally served Hastinapura during the Kurukshetra war.
+</p>
+</div>
 </div>
 
-<div class="box1">
-<a href="story.html#drona"><img src="img7.jpg"></a>
+<!-- DRONA -->
+<div class="face">
+<img src="img7.jpg">
 <h1>Dronacharya</h1>
-<div class="quote">Discipline is the path to mastery.</div>
+<div class="story">
+<h2>Dronacharya</h2>
+<p>
+Dronacharya was teacher of both Pandavas and Kauravas and one of the greatest masters of warfare.
+</p>
+</div>
 </div>
 
-<div class="box1">
-<a href="story.html#kripa"><img src="img8.jpg"></a>
-<h1>Kripacharya</h1>
-<div class="quote">Wisdom endures where power fades.</div>
+<!-- VYASA -->
+<div class="face">
+<img src="img9.jpg">
+<h1>Vyasa</h1>
+<div class="story">
+<h2>Sage Vyasa</h2>
+<p>
+Vyasa authored the Mahabharata and guided many during difficult times with wisdom and foresight.
+</p>
+</div>
 </div>
 
-<div class="box1">
-<a href="story.html#vyasa"><img src="img9.jpg"></a>
-<h1>Sage Vyasa</h1>
-<div class="quote">Truth alone stands eternal.</div>
+<!-- YUDHISHTHIRA -->
+<div class="face">
+<img src="img10.jpg">
+<h1>Yudhishthira</h1>
+<div class="story">
+<h2>Yudhishthira</h2>
+<p>
+Known for truth and righteousness, Yudhishthira became king after the Pandavas' victory.
+</p>
+</div>
 </div>
 
-<div class="box1">
-<a href="story.html#yudishthira"><img src="img10.jpg"></a>
-<h1>Yudishthira</h1>
-<div class="quote">Truth is the highest virtue.</div>
-</div>
-
-<div class="box1">
-<a href="story.html#arjuna"><img src="img11.jpg"></a>
+<!-- ARJUNA -->
+<div class="face">
+<img src="img11.jpg">
 <h1>Arjuna</h1>
-<div class="quote">Clarity of aim leads to victory.</div >
+<div class="story">
+<h2>Arjuna</h2>
+<p>
+Arjuna was the greatest archer of his era and Krishna's companion during the Kurukshetra war.
+</p>
+</div>
 </div>
 
-<div class="box1">
-<a href="story.html#bhima"><img src="img14.jpg"></a>
-<h1>Bhima</h1>
-<div class="quote">Strength serves justice.</div>
-</div>
-
-<div class="box1">
-<a href="story.html#nakula"><img src="img15.jpg"></a>
-<h1>Nakula</h1>
-<div class="quote">True strength lies in grace and discipline.</div>
-</div>
-
-<div class="box1">
-<a href="story.html#sahadeva"><img src="img16.jpg"></a>
-<h1>Sahadeva</h1>
-<div class="quote">When the mind is still, even destiny becomes clear.</div >
-</div>
-
-<div class="box1">
-<a href="story.html#shakuni"><img src="img17.jpg"></a>
-<h1>Shakuni</h1>
-<div class="quote">Even the sharpest game is won by foresight.</div>
-</div>
-
-<div class="box1">
-<a href="story.html#duryodhana"><img src="img12.jpg"></a>
+<!-- DURYODHANA -->
+<div class="face">
+<img src="img12.jpg">
 <h1>Duryodhana</h1>
-<div class="quote">Power belongs to those who dare to claim it.</div>
+<div class="story">
+<h2>Duryodhana</h2>
+<p>
+Duryodhana led the Kauravas and refused to give the Pandavas their rightful kingdom.
+</p>
+</div>
 </div>
 
-<div class="box1">
-<a href="story.html#karna"><img src="img13.jpg"></a>
+<!-- KARNA -->
+<div class="face">
+<img src="img13.jpg">
 <h1>Karna</h1>
-<div class="quote">Loyalty defines a warrior, not birth.</div>
+<div class="story">
+<h2>Karna</h2>
+<p>
+Karna was a loyal friend of Duryodhana and one of the strongest warriors in Mahabharata.
+</p>
+</div>
 </div>
 
-<div class="box1">
-<a href="story.html#abhimanyu"><img src="img18.jpg"></a>
+<!-- BHIMA -->
+<div class="face">
+<img src="img14.jpg">
+<h1>Bhima</h1>
+<div class="story">
+<h2>Bhima</h2>
+<p>
+Bhima was famous for immense strength and fulfilled his vows during the Kurukshetra war.
+</p>
+</div>
+</div>
+<!-- NAKULA -->
+<div class="face">
+<img src="img15.jpg">
+<h1>Nakula</h1>
+<div class="story">
+<h2>Nakula</h2>
+<p>
+Nakula was known for beauty, sword fighting skills and expertise in horse care. He remained loyal to his brothers throughout exile and war.
+</p>
+</div>
+</div>
+
+<!-- SAHADEVA -->
+<div class="face">
+<img src="img16.jpg">
+<h1>Sahadeva</h1>
+<div class="story">
+<h2>Sahadeva</h2>
+<p>
+Sahadeva was wise, intelligent and skilled in astrology. He helped the Pandavas with strategy and fought bravely in war.
+</p>
+</div>
+</div>
+
+<!-- SHAKUNI -->
+<div class="face">
+<img src="img17.jpg">
+<h1>Shakuni</h1>
+<div class="story">
+<h2>Shakuni</h2>
+<p>
+Shakuni was the mastermind behind many conflicts. His manipulation and dice game led to the exile of the Pandavas.
+</p>
+</div>
+</div>
+
+<!-- ABHIMANYU -->
+<div class="face">
+<img src="img18.jpg">
 <h1>Abhimanyu</h1>
-<div class="quote">Courage is the will to enter the unknown.</div>
+<div class="story">
+<h2>Abhimanyu</h2>
+<p>
+Abhimanyu was a fearless young warrior who entered the Chakravyuha and fought bravely before being unfairly surrounded.
+</p>
+</div>
 </div>
 
-<div class="box1">
-<a href="story.html#ghatotkacha"><img src="img19.jpg"></a>
+<!-- GHATOTKACHA -->
+<div class="face">
+<img src="img19.jpg">
 <h1>Ghatotkacha</h1>
-<div class="quote">Power awakens when needed.</div>
+<div class="story">
+<h2>Ghatotkacha</h2>
+<p>
+The son of Bhima and Hidimba, Ghatotkacha used magical powers in battle and sacrificed himself to protect Arjuna.
+</p>
+</div>
 </div>
 
-<div class="box1">
-<a href="story.html#ashwatthama"><img src="img20.jpg"></a>
+<!-- ASHWATTHAMA -->
+<div class="face">
+<img src="img20.jpg">
 <h1>Ashwatthama</h1>
-<div class="quote">Wounds become an unending purpose.</div>
+<div class="story">
+<h2>Ashwatthama</h2>
+<p>
+Ashwatthama, son of Dronacharya, became consumed by revenge after the war and was cursed to wander endlessly.
+</p>
+</div>
 </div>
 
-<div class="box1">
-<a href="story.html#draupadi"><img src="img21.jpg"></a>
+<!-- DRAUPADI -->
+<div class="face">
+<img src="img21.jpg">
 <h1>Draupadi</h1>
-<div class="quote">I become the voice injustice fears.</div>
+<div class="story">
+<h2>Draupadi</h2>
+<p>
+Born from sacred fire, Draupadi became wife of the Pandavas and symbolized dignity, strength and justice.
+</p>
+</div>
 </div>
 
-<div class="box1">
-<a href="story.html#kunti"><img src="img22.jpg"></a>
+<!-- KUNTI -->
+<div class="face">
+<img src="img22.jpg">
 <h1>Kunti</h1>
-<div class="quote">Strength lies in what I endure.</div>
+<div class="story">
+<h2>Kunti</h2>
+<p>
+Kunti raised the Pandavas through hardship and made sacrifices that deeply shaped the Mahabharata.
+</p>
+</div>
 </div>
 
-<div class="box1">
-<a href="story.html#gandhari"><img src="img23.jpg"></a>
+<!-- GANDHARI -->
+<div class="face">
+<img src="img23.jpg">
 <h1>Gandhari</h1>
-<div class="quote">I saw consequences, not darkness.</div>
+<div class="story">
+<h2>Gandhari</h2>
+<p>
+Gandhari blindfolded herself to share her husband's blindness and mourned deeply after losing her sons.
+</p>
 </div>
 </div>
+
+<!-- EXTRA CHARACTER : KRIPACHARYA -->
+<div class="face">
+<img src="img24.jpg">
+<h1>Kripacharya</h1>
+<div class="story">
+<h2>Kripacharya</h2>
+<p>
+Kripacharya was a wise teacher and warrior who survived the Kurukshetra war and continued guiding future generations.
+</p>
+</div>
+</div>
+
+</div>
+
 </body>
 </html>
