@@ -3,218 +3,274 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 
-<title>Mahabharata Characters</title>
+    <title>Characters</title>
 
-<style>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+        body {
+            min-height: 100vh;
+            background: linear-gradient(#1a0f0f, #3b1f1f);
+            font-family: Georgia, serif;
+            overflow-y: auto;
+            overflow-x: hidden;
+            color: #f5e6c8;
+        }
 
-body{
-    min-height:100vh;
-    background:linear-gradient(#1a0f0f,#3b1f1f);
-    font-family:Georgia, serif;
-    overflow-y:auto;
-    overflow-x:hidden;
-    color:#f5e6c8;
-}
+        #video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            opacity: 0.35;
+        }
 
+        .main {
+            position: fixed;
+            top: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 20px;
+            padding: 14px 35px;
+            border-radius: 30px;
+            background: rgba(26, 15, 15, 0.65);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            z-index: 1000;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+        }
 
-#video{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    z-index:-1;
-    opacity:0.35;
-}
+        .box2 a {
+            text-decoration: none;
+            color: #f5e6c8;
+            background: #8b0000;
+            padding: 12px 22px;
+            border-radius: 16px;
+            transition: 0.4s;
+            font-family: 'Cinzel', serif;
+            font-size: 14px;
+        }
 
+        .box2 a:hover {
+            background: #1a0f0f;
+            color: #d4af37;
+            transform: translateY(-4px);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+        }
 
-.main{
-    position:fixed;
-    top:25px;
-    left:50%;
-    transform:translateX(-50%);
-    display:flex;
-    gap:20px;
-    padding:14px 35px;
-    border-radius:30px;
-    background:rgba(255,255,255,0.06);
-    backdrop-filter:blur(18px);
-    border:1px solid rgba(212,175,55,0.2);
-    z-index:1000;
-    box-shadow:0 10px 30px rgba(0,0,0,0.4);
-}
+        .filter-container {
+            position: fixed;
+            top: 110px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 12px;
+            z-index: 999;
+            background: rgba(10, 5, 5, 0.5);
+            padding: 6px 16px;
+            border-radius: 40px;
+            border: 1px solid rgba(212, 175, 55, 0.12);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+        }
 
-.box2 a{
-    text-decoration:none;
-    color:#f5e6c8;
-    background:#7b0000;
-    padding:12px 22px;
-    border-radius:16px;
-    transition:0.4s;
-}
+        .filter-btn {
+            background: transparent;
+            border: none;
+            color: #f5e6c8;
+            font-family: 'Cinzel', serif;
+            font-size: 12px;
+            letter-spacing: 1px;
+            padding: 8px 18px;
+            border-radius: 30px;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            opacity: 0.7;
+        }
 
-.box2 a:hover{
-    background:#1a0f0f;
-    color:#d4af37;
-    transform:translateY(-4px);
-    box-shadow:0 0 15px rgba(212,175,55,0.5);
-}
+        .filter-btn:hover {
+            opacity: 1;
+            color: #d4af37;
+        }
 
+        .filter-btn.active {
+            opacity: 1;
+            background: #7b0000;
+            color: #d4af37;
+            box-shadow: 0 0 12px rgba(123, 0, 0, 0.6);
+        }
 
-.container{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:35px;
-    padding:150px 60px 80px;
-    max-width:1500px;
-    margin:auto;
-}
+        .container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 35px;
+            padding: 210px 60px 80px;
+            max-width: 1500px;
+            margin: auto;
+        }
+        .face {
+            position: relative;
+            width: 100%;
+            height: 430px;
+            border-radius: 35px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.5s ease, box-shadow 0.5s ease, border-color 0.5s ease, opacity 0.4s ease;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            opacity: 1;
+        }
 
+        .face.hidden {
+            display: none !important;
+        }
 
-.face{
-    position:relative;
-    width:100%;
-    height:430px;
-    border-radius:35px;
-    overflow:hidden;
-    cursor:pointer;
-    transition:0.5s ease;
-    background:rgba(255,255,255,0.05);
-    backdrop-filter:blur(20px);
-    border:1px solid rgba(212,175,55,0.15);
-    box-shadow:0 20px 40px rgba(0,0,0,0.5);
-}
+        @keyframes cardReveal {
+            from { opacity: 0; transform: translateY(15px) scale(0.96); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
 
+        .face.animate-in {
+            animation: cardReveal 0.4s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+        }
 
-.face::before{
-    content:"";
-    position:absolute;
-    top:-120%;
-    left:-60%;
-    width:60%;
-    height:250%;
-    background:
-    linear-gradient(
-    transparent,
-    rgba(255,215,0,0.18),
-    transparent);
+        .face::before {
+            position: absolute;
+            top: -120%;
+            left: -60%;
+            width: 60%;
+            height: 250%;
+            background: linear-gradient(transparent, rgba(255, 215, 0, 0.18), transparent);
+            transform: rotate(25deg);
+            transition: 1s;
+            z-index: 2;
+        }
 
-    transform:rotate(25deg);
-    transition:1s;
-    z-index:2;
-}
+        .face:hover::before {
+            left: 140%;
+        }
 
-.face:hover::before{
-    left:140%;
-}
+        .face img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
 
+        .face h1 {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 85%;
+            text-align: center;
+            padding: 14px;
+            border-radius: 22px;
+            color: #d4af37;
+            font-family: 'Cinzel', serif;
+            font-size: 24px;
+            background: rgba(0,0,0,0.4);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            z-index: 4;
+            transition: 0.3s;
+        }
 
-.face img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    transition:0.5s;
-}
+        .story {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 30px;
+            background: rgba(10,8,8,0.78);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: 0.5s ease;
+            z-index: 5;
+        }
 
+        .story h2 {
+            color: #d4af37;
+            font-family: 'Cinzel', serif;
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
 
-.face h1{
-    position:absolute;
-    bottom:20px;
-    left:50%;
-    transform:translateX(-50%);
-    width:85%;
-    text-align:center;
-    padding:14px;
-    border-radius:22px;
-    color:#d4af37;
-    font-size:24px;
-    background:rgba(0,0,0,0.4);
-    backdrop-filter:blur(10px);
-    z-index:4;
-    transition:0.3s;
-}
+        .story p {
+            font-family: 'Lora', serif;
+            line-height: 1.8;
+            font-size: 15px;
+        }
 
+        .face:hover {
+            transform: translateY(-12px) scale(1.08);
+            z-index: 50;
+            border-color: #d4af37;
+            box-shadow: 0 0 40px rgba(212,175,55,0.25), 0 20px 60px rgba(0,0,0,0.8);
+        }
 
-.story{
-    position:absolute;
-    inset:0;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    padding:30px;
-    background:rgba(10,8,8,0.78);
-    backdrop-filter:blur(25px);
-    opacity:0;
-    transform:translateY(20px);
-    transition:0.5s ease;
-    z-index:5;
-}
+        .face:hover .story {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
-.story h2{
-    color:#d4af37;
-    font-size:28px;
-    margin-bottom:15px;
-}
+        .face:hover h1 {
+            opacity: 0;
+        }
 
-.story p{
-    line-height:1.8;
-    font-size:15px;
-}
+        .face:hover img {
+            filter: brightness(20%) blur(2px);
+        }
 
+        @media(max-width:1200px){
+            .container { grid-template-columns: repeat(3, 1fr); }
+        }
 
-.face:hover{
-    transform:translateY(-12px) scale(1.08);
-    z-index:50;
-    border-color:#d4af37;
-    box-shadow:
-    0 0 40px rgba(212,175,55,0.25),
-    0 20px 60px rgba(0,0,0,0.8);
-}
+        @media(max-width:900px){
+            .container { 
+                grid-template-columns: repeat(2, 1fr); 
+                padding-top: 250px;
+            }
+            .filter-container {
+                width: 90%;
+                overflow-x: auto;
+                justify-content: flex-start;
+                white-space: nowrap;
+            }
+            .filter-btn { flex-shrink: 0; }
+        }
 
-.face:hover .story{
-    opacity:1;
-    transform:translateY(0);
-}
+        @media(max-width:600px){
+            .container { 
+                grid-template-columns: 1fr; 
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+        }
 
-.face:hover h1{
-    opacity:0;
-}
-
-.face:hover img{
-    filter:brightness(20%) blur(2px);
-}
-
-
-@media(max-width:1200px){
-.container{
-grid-template-columns:repeat(3,1fr);
-}
-}
-
-@media(max-width:900px){
-.container{
-grid-template-columns:repeat(2,1fr);
-}
-}
-
-@media(max-width:600px){
-.container{
-grid-template-columns:1fr;
-}
-}
-.music-btn {
+        .music-btn {
             position: fixed;
             bottom: 25px;
             right: 25px;
@@ -239,238 +295,255 @@ grid-template-columns:1fr;
             box-shadow: 0 0 20px #d4af37;
             transform: translateY(-3px);
         }
-</style>
+    </style>
 </head>
 
 <body>
 
-<div class="main">
-<div class="box2"><a href="index.html" target="_blank">Home</a></div>
-<div class="box2"><a href="Temples.html" target="_blank">Temples</a></div>
-<div class="box2"><a href="story.html" target="_blank">Story</a></div>
-</div>
+    <div class="main">
+        <div class="box2"><a href="index.html" target="_blank">Home</a></div>
+        <div class="box2"><a href="Temples.html" target="_blank">Temples</a></div>
+        <div class="box2"><a href="story.html" target="_blank">Story</a></div>
+    </div>
 
-<video autoplay muted loop id="video">
-<source src="video.mp4" type="video/mp4">
-</video>
+    <div class="filter-container">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="avatar">Avatars</button>
+        <button class="filter-btn" data-filter="pandava">Pandavas</button>
+        <button class="filter-btn" data-filter="kaurava">Kauravas</button>
+        <button class="filter-btn" data-filter="sage">Sages</button>
+        <button class="filter-btn" data-filter="royal-women">Royal Women</button>
+    </div>
 
-<div class="container">
+    <video autoplay muted loop id="video">
+        <source src="video.mp4" type="video/mp4">
+    </video>
 
-<div class="face">
-<img src="img4.jpg">
-<h1>Krishna</h1>
-<div class="story">
-<h2>Lord Krishna</h2>
-<p>Krishna guided the Pandavas and became Arjuna's charioteer during the Kurukshetra war. He delivered the Bhagavad Gita and taught duty, wisdom, and righteousness.</p>
-</div>
-</div>
+    <div class="container">
 
-<div class="face">
-<img src="img5.jpg">
-<h1>Parashurama</h1>
-<div class="story">
-<h2>Lord Parashurama</h2>
-<p>Parashurama was the sixth avatar of Vishnu and master of warfare. He trained Bhishma, Dronacharya and Karna.</p>
-</div>
-</div>
+        <div class="face" data-faction="avatar">
+            <img src="img4.jpg">
+            <h1>Krishna</h1>
+            <div class="story">
+                <h2>Lord Krishna</h2>
+                <p>Krishna guided the Pandavas and became Arjuna's charioteer during the Kurukshetra war. He delivered the Bhagavad Gita and taught duty, wisdom, and righteousness.</p>
+            </div>
+        </div>
 
-<div class="face">
-<img src="img6.jpg">
-<h1>Bhishma</h1>
-<div class="story">
-<h2>Bhishma Pitamah</h2>
-<p>Bhishma sacrificed his happiness and vowed celibacy to serve Hastinapura loyally during war.</p>
-</div>
-</div>
+        <div class="face" data-faction="avatar">
+            <img src="img5.jpg">
+            <h1>Parashurama</h1>
+            <div class="story">
+                <h2>Lord Parashurama</h2>
+                <p>Parashurama was the sixth avatar of Vishnu and master of warfare. He trained Bhishma, Dronacharya and Karna.</p>
+            </div>
+        </div>
 
-<div class="face">
-<img src="img7.jpg">
-<h1>Dronacharya</h1>
-<div class="story">
-<h2>Dronacharya</h2>
-<p>Dronacharya trained the Pandavas and Kauravas and was one of the greatest masters of warfare.</p>
-</div>
-</div>
+        <div class="face" data-faction="kaurava">
+            <img src="img6.jpg">
+            <h1>Bhishma</h1>
+            <div class="story">
+                <h2>Bhishma Pitamah</h2>
+                <p>Bhishma sacrificed his happiness and vowed celibacy to serve Hastinapura loyally during war.</p>
+            </div>
+        </div>
 
-<div class="face">
-<img src="img8.jpg">
-<h1>Kripacharya</h1>
-<div class="story">
-<h2>Kripacharya</h2>
-<p>Kripacharya trained the Pandavas and Kauravas and was one of the greatest masters of warfare.</p>
-</div>
-</div>
+        <div class="face" data-faction="kaurava">
+            <img src="img7.jpg">
+            <h1>Dronacharya</h1>
+            <div class="story">
+                <h2>Dronacharya</h2>
+                <p>Dronacharya trained the Pandavas and Kauravas and was one of the greatest masters of warfare.</p>
+            </div>
+        </div>
 
-<div class="face">
-<img src="img9.jpg">
-<h1>Vyasa</h1>
-<div class="story">
-<h2>Sage Vyasa</h2>
-<p>Vyasa authored the Mahabharata and guided generations through wisdom and foresight.</p>
-</div>
-</div>
+        <div class="face" data-faction="kaurava">
+            <img src="img8.jpg">
+            <h1>Kripacharya</h1>
+            <div class="story">
+                <h2>Kripacharya</h2>
+                <p>Kripacharya trained the Pandavas and Kauravas and was one of the greatest masters of warfare.</p>
+            </div>
+        </div>
 
-<div class="face">
-<img src="img10.jpg">
-<h1>Yudhishthira</h1>
-<div class="story">
-<h2>Yudhishthira</h2>
-<p>Known for truth and righteousness, Yudhishthira became king after the Pandavas’ victory.</p>
-</div>
-</div>
+        <div class="face" data-faction="sage">
+            <img src="img9.jpg">
+            <h1>Vyasa</h1>
+            <div class="story">
+                <h2>Sage Vyasa</h2>
+                <p>Vyasa authored the Mahabharata and guided generations through wisdom and foresight.</p>
+            </div>
+        </div>
 
-<div class="face">
-<img src="img11.jpg">
-<h1>Arjuna</h1>
-<div class="story">
-<h2>Arjuna</h2>
-<p>Arjuna was the greatest archer of his era and Krishna’s trusted companion in battle.</p>
-</div>
-</div>
+        <div class="face" data-faction="pandava">
+            <img src="img10.jpg">
+            <h1>Yudhishthira</h1>
+            <div class="story">
+                <h2>Yudhishthira</h2>
+                <p>Known for truth and righteousness, Yudhishthira became king after the Pandavas’ victory.</p>
+            </div>
+        </div>
 
-<div class="face">
-<img src="img12.jpg">
-<h1>Duryodhana</h1>
-<div class="story">
-<h2>Duryodhana</h2>
-<p>Duryodhana led the Kauravas and refused to give the Pandavas their rightful kingdom.</p>
-</div>
-</div>
-<div class="face">
-<img src="img13.jpg">
-<h1>Karna</h1>
-<div class="story">
-<h2>Karna</h2>
-<p>
-Karna was a loyal friend of Duryodhana and one of the strongest warriors in Mahabharata. Though born to Kunti, he fought against the Pandavas without knowing they were his brothers.
-</p>
-</div>
-</div>
+        <div class="face" data-faction="pandava">
+            <img src="img11.jpg">
+            <h1>Arjuna</h1>
+            <div class="story">
+                <h2>Arjuna</h2>
+                <p>Arjuna was the greatest archer of his era and Krishna’s trusted companion in battle.</p>
+            </div>
+        </div>
 
-<div class="face">
-<img src="img14.jpg">
-<h1>Bhima</h1>
-<div class="story">
-<h2>Bhima</h2>
-<p>
-Bhima was known for immense strength and courage. He defeated Duryodhana and fulfilled his vows during the Kurukshetra war.
-</p>
-</div>
-</div>
+        <div class="face" data-faction="kaurava">
+            <img src="img12.jpg">
+            <h1>Duryodhana</h1>
+            <div class="story">
+                <h2>Duryodhana</h2>
+                <p>Duryodhana led the Kauravas and refused to give the Pandavas their rightful kingdom.</p>
+            </div>
+        </div>
 
-<div class="face">
-<img src="img15.jpg">
-<h1>Nakula</h1>
-<div class="story">
-<h2>Nakula</h2>
-<p>
-Nakula was admired for his beauty, sword fighting skills and knowledge of horses. He remained loyal to his brothers throughout exile and war.
-</p>
-</div>
-</div>
+        <div class="face" data-faction="kaurava">
+            <img src="img13.jpg">
+            <h1>Karna</h1>
+            <div class="story">
+                <h2>Karna</h2>
+                <p>Karna was a loyal friend of Duryodhana and one of the strongest warriors in Mahabharata. Though born to Kunti, he fought against the Pandavas without knowing they were his brothers.</p>
+            </div>
+        </div>
 
-<div class="face">
-<img src="img16.jpg">
-<h1>Sahadeva</h1>
-<div class="story">
-<h2>Sahadeva</h2>
-<p>
-Sahadeva was wise and skilled in astrology. He helped the Pandavas with planning and strategy during war.
-</p>
-</div>
-</div>
+        <div class="face" data-faction="pandava">
+            <img src="img14.jpg">
+            <h1>Bhima</h1>
+            <div class="story">
+                <h2>Bhima</h2>
+                <p>Bhima was known for immense strength and courage. He defeated Duryodhana and fulfilled his vows during the Kurukshetra war.</p>
+            </div>
+        </div>
 
-<div class="face">
-<img src="img17.jpg">
-<h1>Shakuni</h1>
-<div class="story">
-<h2>Shakuni</h2>
-<p>
-Shakuni manipulated Duryodhana and played a major role in creating conflict between the Pandavas and Kauravas.
-</p>
-</div>
-</div>
+        <div class="face" data-faction="pandava">
+            <img src="img15.jpg">
+            <h1>Nakula</h1>
+            <div class="story">
+                <h2>Nakula</h2>
+                <p>Nakula was admired for his beauty, sword fighting skills and knowledge of horses. He remained loyal to his brothers throughout exile and war.</p>
+            </div>
+        </div>
 
-<div class="face">
-<img src="img18.jpg">
-<h1>Abhimanyu</h1>
-<div class="story">
-<h2>Abhimanyu</h2>
-<p>
-Abhimanyu was a brave young warrior who entered the Chakravyuha and fought fearlessly before being unfairly surrounded.
-</p>
-</div>
-</div>
+        <div class="face" data-faction="pandava">
+            <img src="img16.jpg">
+            <h1>Sahadeva</h1>
+            <div class="story">
+                <h2>Sahadeva</h2>
+                <p>Sahadeva was wise and skilled in astrology. He helped the Pandavas with planning and strategy during war.</p>
+            </div>
+        </div>
 
-<div class="face">
-<img src="img19.jpg">
-<h1>Ghatotkacha</h1>
-<div class="story">
-<h2>Ghatotkacha</h2>
-<p>
-The son of Bhima and Hidimba, Ghatotkacha used magical powers in war and sacrificed himself to save Arjuna.
-</p>
-</div>
-</div>
+        <div class="face" data-faction="kaurava">
+            <img src="img17.jpg">
+            <h1>Shakuni</h1>
+            <div class="story">
+                <h2>Shakuni</h2>
+                <p>Shakuni manipulated Duryodhana and played a major role in creating conflict between the Pandavas and Kauravas.</p>
+            </div>
+        </div>
 
-<div class="face">
-<img src="img20.jpg">
-<h1>Ashwatthama</h1>
-<div class="story">
-<h2>Ashwatthama</h2>
-<p>
-Ashwatthama, son of Dronacharya, became consumed by revenge after the war and was cursed to wander endlessly.
-</p>
-</div>
-</div>
+        <div class="face" data-faction="pandava">
+            <img src="img18.jpg">
+            <h1>Abhimanyu</h1>
+            <div class="story">
+                <h2>Abhimanyu</h2>
+                <p>Abhimanyu was a brave young warrior who entered the Chakravyuha and fought fearlessly before being unfairly surrounded.</p>
+            </div>
+        </div>
 
-<div class="face">
-<img src="img21.jpg">
-<h1>Draupadi</h1>
-<div class="story">
-<h2>Draupadi</h2>
-<p>
-Born from sacred fire, Draupadi became the wife of the Pandavas and symbolized strength, dignity and justice.
-</p>
-</div>
-</div>
+        <div class="face" data-faction="pandava">
+            <img src="img19.jpg">
+            <h1>Ghatotkacha</h1>
+            <div class="story">
+                <h2>Ghatotkacha</h2>
+                <p>The son of Bhima and Hidimba, Ghatotkacha used magical powers in war and sacrificed himself to save Arjuna.</p>
+            </div>
+        </div>
 
-<div class="face">
-<img src="img22.jpg">
-<h1>Kunti</h1>
-<div class="story">
-<h2>Kunti</h2>
-<p>
-Kunti raised the Pandavas through hardship and made sacrifices that deeply influenced the story of Mahabharata.
-</p>
-</div>
-</div>
+        <div class="face" data-faction="kaurava">
+            <img src="img20.jpg">
+            <h1>Ashwatthama</h1>
+            <div class="story">
+                <h2>Ashwatthama</h2>
+                <p>Ashwatthama, son of Dronacharya, became consumed by revenge after the war and was cursed to wander endlessly.</p>
+            </div>
+        </div>
 
-<div class="face">
-<img src="img23.jpg">
-<h1>Gandhari</h1>
-<div class="story">
-<h2>Gandhari</h2>
-<p>
-Gandhari blindfolded herself to share her husband's blindness and mourned deeply after losing her sons.
-</p>
-</div>
-</div>
- <button class="music-btn" onclick="toggleSound()">🎵 Toggle Audio</button>
- <audio id="bg-music" src="audio.mp3" loop></audio>
-    
-     <script>
+        <div class="face" data-faction="royal-women">
+            <img src="img21.jpg">
+            <h1>Draupadi</h1>
+            <div class="story">
+                <h2>Draupadi</h2>
+                <p>Born from sacred fire, Draupadi became the wife of the Pandavas and symbolized strength, dignity and justice.</p>
+            </div>
+        </div>
+
+        <div class="face" data-faction="royal-women">
+            <img src="img22.jpg">
+            <h1>Kunti</h1>
+            <div class="story">
+                <h2>Kunti</h2>
+                <p>Kunti raised the Pandavas through hardship and made sacrifices that deeply influenced the story of Mahabharata.</p>
+            </div>
+        </div>
+
+        <div class="face" data-faction="royal-women">
+            <img src="img23.jpg">
+            <h1>Gandhari</h1>
+            <div class="story">
+                <h2>Gandhari</h2>
+                <p>Gandhari blindfolded herself to share her husband's blindness and mourned deeply after losing her sons.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <button class="music-btn" onclick="toggleSound()">🎵 Toggle Audio</button>
+    <audio id="bg-music" src="audio.mp3" loop></audio>
+     
+    <script>
+        // Ambient Sound Core Logic
         function toggleSound() {
             var myAudio = document.getElementById("bg-music");
-    
             if (myAudio.paused) {
                 myAudio.play();
             } else {
                 myAudio.pause();
             }
         }
-        </script>
-</div>
 
+        // Your Streamlined Dynamic Filter Engine Implementation
+        const buttons = document.querySelectorAll('.filter-btn');
+        const cards = document.querySelectorAll('.face');
+
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                // 1. Switch the active button highlight
+                document.querySelector('.filter-btn.active').classList.remove('active');
+                button.classList.add('active');
+
+                // 2. Filter the cards
+                cards.forEach(card => {
+                    card.classList.remove('animate-in');
+
+                    // Determine if this card is a match (returns true or false)
+                    const isMatch = button.dataset.filter === 'all' || card.dataset.faction === button.dataset.filter;
+
+                    // Toggle 'hidden': adds it if NOT a match, removes it if it IS a match
+                    card.classList.toggle('hidden', !isMatch);
+
+                    if (isMatch) {
+                        void card.offsetWidth; // Force calculation to reset animation
+                        card.classList.add('animate-in');
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
